@@ -1,20 +1,3 @@
-#  vim:ts=2:sts=2:sw=2:et
-#
-#  Author: Hari Sekhon
-#  Date: Tue Aug 3 16:45:07 2021 +0100
-#
-#  https://github.com/HariSekhon/Terraform
-#
-#  License: see accompanying Hari Sekhon LICENSE file
-#
-#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
-#
-#  https://www.linkedin.com/in/HariSekhon
-#
-
-# ============================================================================ #
-#                                 A W S   S N S
-# ============================================================================ #
 
 # XXX: global search and replace 'NAME'
 resource "aws_sns_topic" "NAME" {

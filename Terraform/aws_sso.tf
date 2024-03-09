@@ -1,20 +1,3 @@
-#  vim:ts=2:sts=2:sw=2:et
-#
-#  Author: Hari Sekhon
-#  Date: 2022-09-02 09:54:20 +0100 (Fri, 02 Sep 2022)
-#
-#  https://github.com/HariSekhon/Terraform
-#
-#  License: see accompanying Hari Sekhon LICENSE file
-#
-#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
-#
-#  https://www.linkedin.com/in/HariSekhon
-#
-
-# ============================================================================ #
-#                                 A W S   S S O
-# ============================================================================ #
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssoadmin_account_assignment
 

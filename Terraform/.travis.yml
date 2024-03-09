@@ -1,21 +1,3 @@
-#  vim:ts=2:sts=2:sw=2:et
-#
-#  Author: Hari Sekhon
-#  Date: 2020-09-17 18:18:38 +0100 (Thu, 17 Sep 2020)
-#
-#  https://github.com/HariSekhon/Templates
-#
-#  License: see accompanying Hari Sekhon LICENSE file
-#
-#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback
-#  to help improve or steer this or other code I publish
-#
-#  https://www.linkedin.com/in/HariSekhon
-#
-
-# ============================================================================ #
-#                               T r a v i s   C I
-# ============================================================================ #
 
 # https://docs.travis-ci.com/user/customizing-the-build/
 

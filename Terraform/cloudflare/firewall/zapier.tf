@@ -1,34 +1,3 @@
-#  vim:ts=2:sts=2:sw=2:et
-#
-#  Author: Hari Sekhon
-#  Date: 2021-03-22 20:19:11 +0000 (Mon, 22 Mar 2021)
-#
-#  https://github.com/HariSekhon/Terraform-templates
-#
-#  License: see accompanying Hari Sekhon LICENSE file
-#
-#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
-#
-#  https://www.linkedin.com/in/HariSekhon
-#
-
-# ============================================================================ #
-#            C l o u d f l a r e   F i r e w a l l   -   Z a p i e r
-# ============================================================================ #
-
-# Zapier apparently hasn't heard of NAT GWs so uses all dynamic IP addresses from AWS us-east-1 :-(
-#
-# Looks like Zapier is coming from IP addresses that aren't found in any AWS IP range in the API (as fetched by aws_ip_ranges.sh in https://github.com/HariSekhon/DevOps-Bash-tools repo)
-
-# https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/firewall_rule
-
-# duplicates provider.tf
-#provider "http" {}
-
-# doesn't verify SSL except chain of trust according to Important notice for 0.12 at:
-#
-# https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/data_source
-#
 data "http" "aws_ip_ranges" {
   url = "https://ip-ranges.amazonaws.com/ip-ranges.json"
 

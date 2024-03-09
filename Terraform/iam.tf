@@ -1,24 +1,3 @@
-#  vim:ts=2:sts=2:sw=2:et
-#
-#  Author: Hari Sekhon
-#  Date: 2021-02-11 13:04:18 +0000 (Thu, 11 Feb 2021)
-#
-#  https://github.com/HariSekhon/Terraform
-#
-#  License: see accompanying Hari Sekhon LICENSE file
-#
-#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
-#
-#  https://www.linkedin.com/in/HariSekhon
-
-# ============================================================================ #
-#                                     I A M
-# ============================================================================ #
-
-# =======
-# AWS IAM
-#
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy
 
 resource "aws_iam_policy" "test" {
   name        = "test"

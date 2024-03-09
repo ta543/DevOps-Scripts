@@ -1,20 +1,3 @@
-#  vim:ts=2:sts=2:sw=2:et
-#
-#  Author: Hari Sekhon
-#  Date: 2021-04-01 11:10:59 +0100 (Thu, 01 Apr 2021)
-#
-#  https://github.com/HariSekhon/Terraform
-#
-#  License: see accompanying Hari Sekhon LICENSE file
-#
-#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
-#
-#  https://www.linkedin.com/in/HariSekhon
-#
-
-# ============================================================================ #
-#                             A W S   B u c k e t s
-# ============================================================================ #
 
 # XXX: blocks all public access - use carefully on existing accounts, better to apply to new accounts
 resource "aws_s3_account_public_access_block" "block-public" {

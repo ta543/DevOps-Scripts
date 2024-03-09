@@ -1,36 +1,3 @@
-#  vim:ts=2:sts=2:sw=2:et
-#
-#  Author: Hari Sekhon
-#  Date: [% DATE  # 2021-01-18 17:50:43 +0000 (Mon, 18 Jan 2021) %]
-#
-#  https://github.com/HariSekhon/Terraform
-#
-#  License: see accompanying Hari Sekhon LICENSE file
-#
-#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
-#
-#  https://www.linkedin.com/in/HariSekhon
-#
-
-# ============================================================================ #
-#                            G C P   F i r e w a l l
-# ============================================================================ #
-
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_firewall
-
-# Easily apply these standard rules uniformly to multiple VPC networks by simply calling this module with the 'network' parameter
-#
-# For rules specific to a single network, instead put them in the top level firewall.tf
-
-# don't Terraform modify GKE auto-created firewall rules:
-#
-#   https://cloud.google.com/kubernetes-engine/docs/concepts/firewall-rules
-
-
-# ============================================================================ #
-#                       N e t w o r k   A d d r e s s e s
-# ============================================================================ #
-
 # Network addresses used in multiple places in different rules - set once here
 
 locals {

@@ -1,20 +1,3 @@
-#  vim:ts=2:sts=2:sw=2:et
-#
-#  Author: Hari Sekhon
-#  Date: 2023-01-25 19:23:33 +0000 (Wed, 25 Jan 2023)
-#
-#  https://github.com/HariSekhon/Terraform
-#
-#  License: see accompanying Hari Sekhon LICENSE file
-#
-#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
-#
-#  https://www.linkedin.com/in/HariSekhon
-#
-
-# ============================================================================ #
-#                       A W S   S S O   U s e r   D a t a
-# ============================================================================ #
 
 # populate AWS SSO user data to assign to built-in permsets
 

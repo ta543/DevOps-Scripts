@@ -1,22 +1,3 @@
-#  vim:ts=2:sts=2:sw=2:et
-#
-#  Author: Hari Sekhon
-#  Date: 2022-02-25 15:29:26 +0000 (Fri, 25 Feb 2022)
-#
-#  https://github.com/HariSekhon/Terraform
-#
-#  License: see accompanying Hari Sekhon LICENSE file
-#
-#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
-#
-#  https://www.linkedin.com/in/HariSekhon
-#
-
-# ============================================================================ #
-#          G i t H u b   A c t i o n s   O r g   P e r m i s s i o n s
-# ============================================================================ #
-
-# Lock down 3rd party github actions to avoid arbitrary unaudited code execution by devs
 
 # name is just for reference purposes, the org will be set in github{} in provider.tf
 resource "github_actions_organization_permissions" "MYORG" {

@@ -1,23 +1,3 @@
-#  vim:ts=2:sts=2:sw=2:et
-#
-#  Author: Hari Sekhon
-#  Date: [% DATE  # 2020-07-27 18:33:49 +0100 (Mon, 27 Jul 2020) %]
-#
-#  https://github.com/HariSekhon/Terraform
-#
-#  License: see accompanying Hari Sekhon LICENSE file
-#
-#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
-#
-#  https://www.linkedin.com/in/HariSekhon
-#
-
-# tested on Terraform 0.12
-
-# XXX: uncomment if not in provider.tf
-#provider "http" {}
-
-# doesn't verify SSL except chain of trust according to Important notice for 0.12 at:
 #
 # https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/data_source
 #

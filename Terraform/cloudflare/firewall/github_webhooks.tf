@@ -1,30 +1,3 @@
-#  vim:ts=2:sts=2:sw=2:et
-#
-#  Author: Hari Sekhon
-#  Date: 2021-03-22 20:19:11 +0000 (Mon, 22 Mar 2021)
-#
-#  https://github.com/HariSekhon/Terraform-templates
-#
-#  License: see accompanying Hari Sekhon LICENSE file
-#
-#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
-#
-#  https://www.linkedin.com/in/HariSekhon
-#
-
-# ============================================================================ #
-#   C l o u d f l a r e   F i r e w a l l   -   G i t H u b   W e b h o o k s
-# ============================================================================ #
-
-# Permit GitHub Webhook addresses through Cloudflare Firewall to private sites such as Jenkins
-
-# https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/firewall_rule
-
-# duplicates provider.tf
-#provider "http" {}
-
-# doesn't verify SSL except chain of trust according to Important notice for 0.12 at:
-#
 # https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/data_source
 #
 data "http" "github_meta" {

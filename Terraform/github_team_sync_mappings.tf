@@ -1,26 +1,3 @@
-#  vim:ts=2:sts=2:sw=2:et
-#
-#  Author: Hari Sekhon
-#  Date: 2022-10-06 16:56:47 +0100 (Thu, 06 Oct 2022)
-#
-#  https://github.com/HariSekhon/Terraform
-#
-#  License: see accompanying Hari Sekhon LICENSE file
-#
-#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
-#
-#  https://www.linkedin.com/in/HariSekhon
-#
-
-# ============================================================================ #
-#               G i t H u b   T e a m   -   I D P   m a p p i n g
-# ============================================================================ #
-
-# Maps groups from an SSO IDP such as Azure Active Directory to GitHub teams to populate their members from the IDP groups
-
-# XXX: data.github_organization_team_sync_groups takes a very long time to run so split this to it's own backend to not
-# 		 run along with all the other github actions as it'll kill CI/CD minutes and waste engineer time waiting for every
-#			 pull request's plan posting
 
 locals {
   team_group_mapping = {

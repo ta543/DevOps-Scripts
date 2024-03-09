@@ -1,15 +1,4 @@
-#!/usr/bin/env bash
-#  vim:ts=4:sts=4:sw=4:et
-#
-#  Author: Hari Sekhon
-#  Date: 2022-06-10 14:09:17 +0100 (Fri, 10 Jun 2022)
-#
-#  https://github.com/HariSekhon/Terraform
-#
-#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback
-#
-#  https://www.linkedin.com/in/HariSekhon
-#
+#!/usr/bin/
 
 set -euo pipefail
 [ -n "${DEBUG:-}" ] && set -x
