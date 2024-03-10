@@ -1,4 +1,3 @@
-
 resource "aws_iam_policy" "test" {
   name        = "test"
   path        = "/"

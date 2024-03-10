@@ -1,5 +1,3 @@
-
-# XXX: blocks all public access - use carefully on existing accounts, better to apply to new accounts
 resource "aws_s3_account_public_access_block" "block-public" {
   block_public_acls       = true
   block_public_policy     = true

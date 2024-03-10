@@ -1,5 +1,3 @@
-
-# XXX: global search and replace 'NAME'
 resource "aws_sns_topic" "NAME" {
   name = "NAME"
 }

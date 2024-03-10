@@ -1,4 +1,3 @@
-# replace with variables if inside module
 locals {
   rules = [
     {

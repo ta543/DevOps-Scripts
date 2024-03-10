@@ -1,4 +1,3 @@
-
 SHELL = /usr/bin/
 
 .PHONY: default
