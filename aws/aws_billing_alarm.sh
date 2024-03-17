@@ -4,10 +4,8 @@ set -euo pipefail
 [ -n "${DEBUG:-}" ] && set -x
 srcdir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# shellcheck disable=SC1090,SC1091
 . "$srcdir/lib/aws.sh"
 
-# shellcheck disable=SC2034,SC2154
 usage_description="
 Sets an AWS CloudWatch billing alarm to trigger as soon as you begin incurring any charges
 
@@ -23,26 +21,9 @@ The second argument sets the email address to use in an SNS topic to notify you.
 If no email is given specified attempts to use the email from your local Git configuration.
 If neither is available, shows this usage mesage.
 
-XXX: You must also enable Receive Billing Alerts in the Billing Preferences page for the CloudWatch metrics to be populated by AWS Billing:
-
-    https://console.aws.amazon.com/billing/home?#/preferences
-
-See the created alarm here:
-
-    https://console.aws.amazon.com/cloudwatch/home?region=us-east-1
-
-(notice the region must be us-east-1 as per description above)
-
-See Also:
-
-    aws_budget_alarm.sh - newer method of doing this using AWS Budgets
-
-
 $usage_aws_cli_required
 "
 
-# used by usage() in lib/utils.sh
-# shellcheck disable=SC2034
 usage_args="<threshold_amount_in_USD> [<email_address>]"
 
 help_usage "$@"
@@ -50,7 +31,6 @@ help_usage "$@"
 threshold="${1:-0.00}"
 email="${2:-$(git config user.email || :)}"
 
-# XXX: region has to be us-east-1 because this is where the billing metric data accumulates regardless of which region you actually use
 region="us-east-1"
 
 sns_topic="AWS_Charges"
@@ -66,7 +46,6 @@ fi
 timestamp "Creating SNS topic to email '$email' in region '$region'"
 output="$(aws sns create-topic --name "$sns_topic" --region "$region" --output json)"
 
-# "arn:aws:sns:us-east-1:123456789012:AWS_Charges"
 sns_topic_arn="$(jq -r '.TopicArn' <<< "$output")"
 
 echo
@@ -77,7 +56,6 @@ aws sns subscribe --topic-arn "$sns_topic_arn" --protocol email --notification-e
 echo
 
 timestamp "Creating CloudWatch Alarm for AWS charges > $threshold USD in region '$region'"
-# --period 21600 = 6 hours (default)
 aws cloudwatch put-metric-alarm --alarm-name "AWS Charges" \
                                 --alarm-description "Alerts on AWS charges greater than $threshold USD" \
                                 --actions-enabled \

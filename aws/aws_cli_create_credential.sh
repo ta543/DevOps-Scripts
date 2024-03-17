@@ -4,10 +4,8 @@ set -euo pipefail
 [ -n "${DEBUG:-}" ] && set -x
 srcdir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# shellcheck disable=SC1090,SC1091
 . "$srcdir/lib/aws.sh"
 
-# shellcheck disable=SC2034,SC2154
 usage_description="
 Creates an AWS service account for CI/CD automation or AWS CLI to avoid having to re-login every day via SSO with 'aws sso login'
 
@@ -29,18 +27,12 @@ Idempotent - safe to re-run, will skip creating a user that already exists or CS
 $usage_aws_cli_required
 "
 
-# used by usage() in lib/utils.sh
-# shellcheck disable=SC2034
 usage_args="<username> [<group1,group2,policy1,policy2...> <keyfile>]"
 
 help_usage "$@"
 
-#min_args 1 "$@"
-
 user="${1:-$USER-cli}"
 
-#group="${2:-Admins}"
-#policy="${2:-AdministratorAccess}"
 groups_or_policies="${2:-}"
 default_group="Admins"
 default_policy="AdministratorAccess"

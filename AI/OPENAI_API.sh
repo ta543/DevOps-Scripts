@@ -4,10 +4,8 @@ set -euo pipefail
 [ -n "${DEBUG:-}" ] && set -x
 srcdir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# shellcheck disable=SC1090,SC1091
 . "$srcdir/lib/utils.sh"
 
-# shellcheck disable=SC2034,SC2154
 usage_description="
 Queries the OpenAI API
 
@@ -15,21 +13,6 @@ Automatically handles authentication via environment variable \$OPENAI_API_KEY
 If a member of multiple organizations then you must also set \$OPENAI_ORGANIZATION_ID
 
 Can specify \$CURL_OPTS for options to pass to curl or provide them as arguments
-
-
-Set up your API key here:
-
-    https://platform.openai.com/account/api-keys
-
-If you are a member of multiple organizations, get the Organization ID here:
-
-    https://platform.openai.com/account/org-settings
-
-
-API Reference:
-
-    https://platform.openai.com/docs/api-reference/introduction
-
 
 Examples:
 
@@ -65,8 +48,6 @@ Retrieve fine-tune:
     ${0##*/} /fine-tunes/{fine_tune_id}
 "
 
-# used by usage() in lib/utils.sh
-# shellcheck disable=SC2034
 usage_args="/path [<curl_options>]"
 
 url_base="https://api.openai.com/v1"
