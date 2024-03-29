@@ -3,9 +3,6 @@ terraform {
   required_version = ">= 0.13"
 
   required_providers {
-    # XXX: delete as necessary
-
-    # 0.13+
     # https://registry.terraform.io/providers/hashicorp/aws/latest/docs
     aws = {
       source  = "hashicorp/aws"
@@ -45,47 +42,30 @@ terraform {
 
 }
 
-# ============================================================================ #
-#                            Configure the Providers
-# ============================================================================ #
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 provider "aws" {
-  # set here in 0.12, set in required_providers in 0.13
-  #version = "~> 3.7.0"
+  version = "~> 3.7.0"
   profile = "default"
-  region  = var.region # eg. eu-west-2, gets this from variables.tf default or tfvars or TFC variables
+  region  = var.region
 }
 
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs
 provider "google" {
-  project = var.project
-  region  = var.region # eg. europe-west2
-}
-
-# choose this over the default one in any resource by adding this to the resource block: provider = google.europe
-provider "google" {
-  alias   = "europe" # to use this provider as an override on a resource-by-resource basis
-  project = var.project
-  region  = europe-west2
-}
-
-provider "google-beta" {
   project = var.project
   region  = var.region
 }
 
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 provider "azurerm" {
-  # set here in 0.12, set in required_providers in 0.13
-  #version = "~> 2.28.0"
+  version = "~> 2.28.0"
   features {}
 }
 
 # https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs
 provider "cloudflare" {
-  email   = var.cloudflare_email   # set these in terraform.tfvars and don't commit it
-  api_key = var.cloudflare_api_key # requires global api key, api tokens don't work
+  email   = var.cloudflare_email
+  api_key = var.cloudflare_api_key
 }
 
 provider "http" {}

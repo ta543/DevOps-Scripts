@@ -16,22 +16,6 @@ variable "vpc_name" {
   #default = "default"
 }
 
-# AWS / GCP
-#variable "region" {
-#  type = string
-#
-#  # AWS
-#  #
-#  #   https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region
-#  #
-#  #default = "eu-west-2"
-#
-#  # GCP
-#  #
-#  #   https://cloud.google.com/compute/docs/regions-zones#available
-#  #
-#  #default = "europe-west2"
-#}
 
 variable "some_secret" {
   type        = string

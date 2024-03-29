@@ -1,59 +1,18 @@
+terraform {
+  backend "s3" {
+    bucket         = "X"
+    key            = "terraform.tfstate"
+    region         = "eu-west-1"
+    dynamodb_table = "terraform_locks"
+    encrypt        = true
+  }
+}
+
+
+
 
 terraform {
-
-  # ============================
-  # Newbies get this by default:
-  #
-  #default backend
-  #backend "local" {
-  #  path = "./terraform.tfstate"
-  #}
-
-  # Teams need one of the following for shared state:
-
-  # ===========
-  # Cloud Pros:
-  #
-  # =============
-  # Google Cloud:
-  #
-  # XXX: remember to enable Object Versioning on this GCS bucket for state recovery:
-  #
-  #   https://cloud.google.com/storage/docs/object-versioning
-  #
-  #   gsutil versioning set on gs://$GOOGLE_PROJECT_ID-productiontf-state
-  #backend "gcs" {
-  #  bucket = "NAME-production-tf-state"   # XXX: EDIT
-  #  prefix = "terraform/state/production" # <prefix>/<name>.tfstate
-  #}
-
-  # ====================
-  # Amazon Web Services:
-  #
-  # XXX: remember to enable Bucket Versioning on this S3 bucket for state recovery:
-  #
-  #   https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-versioning.html
-  #
-  # IAM permissions needed:
-  #
-  #   https://www.terraform.io/docs/backends/types/s3.html#s3-bucket-permissions
-  #
-  #backend "s3" {
-  #  bucket = "mybucket" # XXX: EDIT
-  #  key    = "path/to/my/key"
-  #  region = "eu-west-1"
-  #  encrypt = true
-  #  # XXX: EDIT - set DynamoDB table name and configure for locking:
-  #  #
-  #  #  https://www.terraform.io/docs/backends/types/s3.html#dynamodb-state-locking
-  #  #
-  #  dynamodb_table = "mytable"
-  #}
-
-  # ================
-  # Terraform Cloud:
-  #
-  #backend "remote" {
+  backend "remote" {
   #  hostname = "app.terraform.io"  # for Terraform Enterprise adjust this to your on-prem installation address
   #  organization = "mycompany"  # XXX: EDIT
   #
@@ -66,3 +25,8 @@ terraform {
   #  }
   #}
 }
+
+
+
+
+
