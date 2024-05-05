@@ -12,13 +12,13 @@ terraform {
     # https://registry.terraform.io/providers/hashicorp/google/latest/docs
     google = {
       source  = "hashicorp/google"
-      version = "~> 3.40.0"
+      version = "~> 4.0"
     }
 
     # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
     azure = {
       source  = "hashicorp/azurerm"
-      version = "~> 2.28.0"
+      version = "~> 3.0"
     }
 
     # https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs
@@ -45,7 +45,6 @@ terraform {
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 provider "aws" {
-  version = "~> 3.7.0"
   profile = "default"
   region  = var.region
 }
@@ -53,12 +52,11 @@ provider "aws" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs
 provider "google" {
   project = var.project
-  region  = var.region
+  region  = var.gcp_region
 }
 
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
-provider "azurerm" {
-  version = "~> 2.28.0"
+provider "azure" {
   features {}
 }
 
