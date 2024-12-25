@@ -11,9 +11,9 @@ git commit -m "$commit_message"
 
 # Push to the current branch
 if git push; then
-    # Print [PASSED] in yellow if push succeeds
-    echo -e "\033[1;33m[PASSED] Changes have been pushed successfully.\033[0m"
+    # Use ANSI 256-color mode for bright yellow (approx to #FFD700)
+    echo -e "\033[38;5;226m[PASSED]\033[0m Changes have been pushed successfully."
 else
-    # Print [FAILED] in red if push fails
-    echo -e "\033[1;31m[FAILED] Push failed. Check for errors.\033[0m"
+    # Bright red for failure
+    echo -e "\033[38;5;196m[FAILED]\033[0m Push failed. Check for errors."
 fi
