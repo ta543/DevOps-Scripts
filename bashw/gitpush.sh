@@ -12,8 +12,8 @@ git commit -m "$commit_message"
 # Push to the current branch
 if git push; then
     # Print [PASSED] in yellow if push succeeds
-    echo -e "\e[33m[PASSED] Changes have been pushed successfully.\e[0m"
+    echo -e "\033[1;33m[PASSED] Changes have been pushed successfully.\033[0m"
 else
     # Print [FAILED] in red if push fails
-    echo -e "\e[31m[FAILED] Push failed. Check for errors.\e[0m"
+    echo -e "\033[1;31m[FAILED] Push failed. Check for errors.\033[0m"
 fi
